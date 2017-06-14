@@ -45,6 +45,9 @@
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JuK-bN-b6l"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="36p-XA-AEh">
                                 <rect key="frame" x="61" y="160" width="253" height="30"/>
@@ -82,6 +85,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="GZn-27-e5m" secondAttribute="trailing" constant="45" id="yh5-dP-RWr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="msgLabel" destination="8GW-Ur-NFG" id="r1f-O7-GKW"/>
+                        <outlet property="pwdTextField" destination="GZn-27-e5m" id="uzk-dW-8py"/>
+                        <outlet property="userTextField" destination="36p-XA-AEh" id="nwc-UM-SAc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

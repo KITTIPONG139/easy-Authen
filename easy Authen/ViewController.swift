@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var userTextField: UITextField!
+    
+    @IBOutlet weak var pwdTextField: UITextField!
+    
+    @IBOutlet weak var msgLabel: UILabel!
+    
+    @IBAction func loginButton(_ sender: Any) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // finish design
