@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     // Implicit 
     var strUser: String?
     var strPwd: String?
-    
+    let dicUser = ["master":"1234", "doramon":"5678", "nobita":"1234"]
     
 
     @IBOutlet weak var userTextField: UITextField!
@@ -40,7 +40,8 @@ class ViewController: UIViewController {
     // Call checkSpace func
         if checkSpace(myString: strUser!) && checkSpace(myString: strPwd!)                                       {
             print("No Space")
-            msgLabel.text = ""
+            showMsg(strMsg: "")
+            checkUserAndPwd(strUser: strUser!, strPwd: strPwd!)
        }else {
             print("Have Space")
             showMsg(strMsg: "Please Fill all form")
@@ -54,6 +55,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }// main method
 
+    func checkUserAndPwd(strUser: String, strPwd: String) -> Void {
+        //check user
+        if let testUser = dicUser[strUser]{
+            print("testUser==>\(testUser)")
+        }else{
+            print("testUser is nil ")
+            showMsg(strMsg: "No "+strUser+" "+"in my database")
+        }
+    }
+    
+    
+    
+    
     func checkSpace(myString: String) -> Bool {
         let intString = myString.characters.count
         var result: Bool = true
@@ -69,12 +83,11 @@ class ViewController: UIViewController {
         msgLabel.text = strMsg
     }
     
-    
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     } //didReceive
+    
 } // main class
 
