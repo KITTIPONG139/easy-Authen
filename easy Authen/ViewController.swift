@@ -59,6 +59,13 @@ class ViewController: UIViewController {
         //check user
         if let testUser = dicUser[strUser]{
             print("testUser==>\(testUser)")
+            if strPwd == testUser{
+                // Collect password
+                showMsg(strMsg: "Wellcome !!!")
+            }else{
+                // wrong password
+                showMsg(strMsg: "Wrong password")
+            }
         }else{
             print("testUser is nil ")
             showMsg(strMsg: "No "+strUser+" "+"in my database")
