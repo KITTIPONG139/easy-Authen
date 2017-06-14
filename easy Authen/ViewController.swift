@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var msgLabel: UILabel!
     
     @IBAction func loginButton(_ sender: Any) {
+        
+        
     // Get value from TextField
         strUser = userTextField.text
         strPwd = pwdTextField.text
@@ -36,9 +38,13 @@ class ViewController: UIViewController {
         print("intUser==>\(intUser!)")
         print("intPwd==>\(intPwd!)")
     // Call checkSpace func
-        if checkSpace(myString: strUser!) {
-            print("user OK")
-       }else { print("Blank user")}
+        if checkSpace(myString: strUser!) && checkSpace(myString: strPwd!)                                       {
+            print("No Space")
+            msgLabel.text = ""
+       }else {
+            print("Have Space")
+            showMsg(strMsg: "Please Fill all form")
+       }
      //   }else { msgLabel.text = "Blank user"}
     }// login button
     
@@ -57,6 +63,10 @@ class ViewController: UIViewController {
         }
         
         return result
+    }
+    // Take Arg message to show on screen
+    func showMsg(strMsg:String) -> Void {
+        msgLabel.text = strMsg
     }
     
     
