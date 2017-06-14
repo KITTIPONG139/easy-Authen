@@ -9,6 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // Implicit 
+    var strUser: String?
+    var strPwd: String?
+    
+    
 
     @IBOutlet weak var userTextField: UITextField!
     
@@ -17,20 +23,48 @@ class ViewController: UIViewController {
     @IBOutlet weak var msgLabel: UILabel!
     
     @IBAction func loginButton(_ sender: Any) {
-    }
-    
+    // Get value from TextField
+        strUser = userTextField.text
+        strPwd = pwdTextField.text
+    // Check by show get user & password succeed
+    // ต้องใส่  ! FORCE UNWRAPE เพื่อขออนุญาต optional variable ตัวแปรที่มีค่าว่างได้ ปกติ iOS จะไม่ยอม
+        print("user==>\(strUser!)")
+        print("pwd==>\(strPwd!)")
+    // how to know variable is nil, Count it !!!(Best practice ?)
+        let intUser = strUser?.characters.count
+        let intPwd = strPwd?.characters.count
+        print("intUser==>\(intUser!)")
+        print("intPwd==>\(intPwd!)")
+    // Call checkSpace func
+        if checkSpace(myString: strUser!) {
+            print("user OK")
+       }else { print("Blank user")}
+     //   }else { msgLabel.text = "Blank user"}
+    }// login button
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // finish design
         // Do any additional setup after loading the view, typically from a nib.
-    }
+    }// main method
 
+    func checkSpace(myString: String) -> Bool {
+        let intString = myString.characters.count
+        var result: Bool = true
+        if intString == 0 {
+            // Blank data
+           result = false
+        }
+        
+        return result
+    }
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-
-}
+    } //didReceive
+} // main class
 
